@@ -74,5 +74,14 @@ def send_whatsapp_message(to, message):
     }
     requests.post(url, headers=headers, json=payload)
 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "¡Hola desde Render! Tu bot está activo."
+
+
 if __name__ == "__main__":
     app.run(debug=True)
